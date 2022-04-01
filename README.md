@@ -32,7 +32,7 @@ var saveDataObject = new SaveObject
 ## Saving:
 Use the following snipped to create a save file called "save1"
 ```c#
-GameSaver.Save<SaveObject>("save1", saveDataObject);
+SaveManager.Save<SaveObject>("save1", saveDataObject);
 ```
 
 ## Loading:
