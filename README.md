@@ -5,17 +5,17 @@
 GameSaver is a package to simplify saving game data in Unity.
 
 # How to use
-* Create a class that holds your save data.
+* Create a class that holds your save data states.
 * Populate your object with data.
 
 ## Save Data Class Example:
 ```c#
-public class SaveObject
+public class SaveData
 {
-    public int score;
-    public string playerName;
-    public Dictionary<string, int> numberOfWeapons = new Dictionary<string, int>();
-    public List<string> skinsUnlocked = new List<string>();
+    public int level;
+    public string levelNumberString;
+    public Dictionary<string, int> numberOfEnemies = new Dictionary<string, int>();
+    public List<string> playerSkins = new List<string>();
 }
 ```
 
@@ -23,22 +23,22 @@ public class SaveObject
 ```c#
 var saveDataObject = new SaveObject
 {
-    score = 5,
-    playerName = "player",
-    numberOfWeapons = new Dictionary<string, int>{{"excalibur", 5}, {"diviner", 2}},
-    skinsUnlocked = new List<string>{"skin1", "skin2"}
+    level = 5,
+    levelNumberString = "69",
+    numberOfEnemies = new Dictionary<string, int>{{"L1Enemy", 5}, {"L2Enemy", 2}},
+    playerSkins = new List<string>{"skin1", "skin2"}
 };
 ```
 ## Saving:
 Use the following snipped to create a save file called "save1"
 ```c#
-SaveManager.Save<SaveObject>("save1", saveDataObject);
+SaveManager.Save<SaveData>("SaveDataFile", saveDataObject);
 ```
 
 ## Loading:
 Use the following snipped to load a save file called "save1"
 ```c#
-var loadObject = Load<SaveObject>("save1");
+var loadObject = Load<SaveData>("SaveDataFile");
 ```
 
 ## Document revision history
