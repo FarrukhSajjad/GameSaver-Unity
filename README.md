@@ -45,4 +45,4 @@ var loadObject = Load<SaveData>("SaveDataFile");
 
 |Date|Version|
 |---|---|
-|April 1st, 2022|Version 0.0.1|
+|February 9th, 2023|Version 0.0.2|
